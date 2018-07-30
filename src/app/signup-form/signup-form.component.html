@@ -1,0 +1,69 @@
+<div class="container">	
+	<div class="d-flex flex-row wrapper">
+	  <div class="left-side d-flex flex-column">
+	    <div routerLink="/user" class="logo-circle">
+	      <p class="logo-text">Logo</p>
+	    </div>
+	    <div class="page-title">
+	      Start your 14 day free trial
+	    </div>
+	    <div class="page-subtitle">
+	      No credit card required
+	    </div>
+	    <div class="form-group sign-up d-flex flex-column">
+	      <div class="name-input d-flex">
+	        <span class="d-flex flex-column">
+	          <label *ngIf="firstName" class="input-label" for="first-name">FIRST NAME</label>
+	          <input type="text" class="first-name form-control" name="first-name" placeholder="FIRST NAME" [(ngModel)]="firstName">
+	          <div class="first-name-line line"></div>
+	        </span>
+	        <span class="d-flex flex-column">
+	          <label *ngIf="lastName" class="input-label" for="last-name">LAST NAME</label>
+	          <input type="text" class="last-name form-control" name="last-name" placeholder="LAST NAME" [(ngModel)]="lastName">
+	          <div class="last-name-line line"></div>
+	        </span>
+	      </div>
+	      <label *ngIf="companyName" class="input-label" for="company-name">COMPANY NAME</label>
+	      <input type="text" class="company-name form-control" name="company-name" placeholder="COMPANY NAME" [(ngModel)]="companyName">
+	      <div class="company-name-line line"></div>
+	      <label *ngIf="email" class="input-label" for="email">EMAIL</label>
+	      <input type="text" class="email form-control" name="email" placeholder="EMAIL" [(ngModel)]="email">
+	      <div class="email-line line"></div>
+	      <label *ngIf="password" class="input-label" for="password">PASSWORD</label>
+	      <div class="password-wrapper d-flex">
+	        <input [type]="showPassword ? 'text' : 'password'" class="password form-control" name="password" placeholder="PASSWORD" [(ngModel)]="password">
+	        <img class="visibility-off-copy" src="assets/visibility-off-copy@2x.png" (click)="tooglePassword()">
+	      </div>
+	      <div class="password-line line"></div>
+	      <label *ngIf="confirmPassword" class="input-label" for="cofirm-password">CONFIRM PASSWORD</label>
+	      <div class="confirm-wrapper d-flex">
+	        <input [type]="showConfirm ? 'text' : 'password'" class="confirm-password form-control" name="cofirm-password" placeholder="COFIRM PASSWORD" [(ngModel)]="confirmPassword">
+	        <img class="visibility-off-copy" src="assets/visibility-off-copy@2x.png" (click)="toogleConfirm()">
+	      </div>
+	      <div class="confirm-line line"></div>
+	      <div>
+	        <input type="checkbox" class="checkbox-input" name="check" [(ngModel)]="check">
+	        <label class="form-check-label" for="check">I agree to the terms of service</label>
+	      </div>
+	      <div class="buttons d-flex">
+	        <span (click)="onSignUp()" class="signup-button" [class.valid-button]="validForm()">
+	          Sign Up
+	        </span>
+	        <span class="cancel-button">
+	          <a href=""> Cancel</a>
+	        </span>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="right-side d-flex flex-column">
+	    <img class="blue-image" src="assets/group-2.png">
+	    <div class="caption">
+	      <p class="caption-title">Save Time</p>
+	      <p class="caption-content">With demo project, I've saved <br />
+	        hundreds of hours that I used to <br />
+	        waste on manual date entry.</p>
+	      <p class="caption-author">Helen Jackson</p>
+	    </div>
+	  </div>
+	</div>
+</div>

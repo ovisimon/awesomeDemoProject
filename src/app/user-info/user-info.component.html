@@ -1,0 +1,15 @@
+<div *ngIf="authService.currentUser" class="user-data d-flex flex-column">
+	<h5>User Information</h5>
+	<h4>UID: {{ authService.currentUserId }}</h4>
+	<h4>Email: {{ authService.currentUserName }}</h4>
+	<button class="btn btn-submit" (click)="logout()">Logout</button>
+</div>
+<div *ngIf="!authService.currentUser">
+		<div class="form-group sign-up d-flex flex-column">
+			<h2 class="mb-5">Login Page</h2>
+			<input type="email" name="email" class="form-control mb-2" [(ngModel)]="email" placeholder="EMAIL">
+			<input type="password" name="password" class="form-control mb-5" [(ngModel)]="password" placeholder="PASSWORD">
+			<button type="submit" class="btn btn-submit" (click)="onLoginEmail()">Login</button>
+			<a routerLink="/" class="mt-5">Create new user</a>
+		</div>
+</div>
